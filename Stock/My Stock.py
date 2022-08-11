@@ -66,7 +66,7 @@ while True:
   for i in range(len(treelist)):
       treeview.insert('', 'end', text=i, values=treelist[i], iid=str(i)+"번")
 
-  # 슴겨진 항목 (추후 관심 주 추가 항목으로 변경ㅈ)
+  # 슴겨진 항목 (추후 관심 주 추가 항목으로 변경)
   # top=treeview.insert('', 'end', text="hidden index", iid="5번")
   # top_mid1=treeview.insert(top, 'end', text="5", values=["Timy", 0, 8], iid="5번-1")
   # top_mid2=treeview.insert(top, 0, text="6", values=["Ann", 35, 7], iid="5번-0")
