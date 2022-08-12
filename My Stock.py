@@ -19,7 +19,7 @@ def get_bs_obj(com_code):
 
 def get_price(com_code):
   bs_obj = get_bs_obj(com_code)
-  no_today = bs_obj.find("p", {"class":"no_today"})
+  no_today = bs_obj.find("p", {"class":"no_today"}) 
   blind_now = no_today.find("span", {"class":"blind"})
   return blind_now.text
 
@@ -52,6 +52,8 @@ treeview.heading("three", text="현재가", anchor="center")
 treeview.column("#4", width=100, anchor="center")
 treeview.heading("four", text="평가손익", anchor="center")
 
+삼성n = int(input("삼성전자 보유 수량을 입력하세요."))
+LGn = int(input("LG전자 보유 수량을 입력하세요."))
 
 while True:
   time.sleep(1)
@@ -60,7 +62,7 @@ while True:
   now = datetime.now()
   
   # 표에 삽입될 데이터
-  treelist=[("삼성전자", 7, 삼성전자, ((삼성전자*7) - 412800)), ("LG전자", 6, LG전자, ((LG전자*6) - 560600))]
+  treelist=[("삼성전자", 삼성n, 삼성전자, ((삼성전자*7) - 412800)), ("LG전자", LGn, LG전자, ((LG전자*6) - 560600))]
   
   # 표에 데이터 삽입
   for i in range(len(treelist)):
