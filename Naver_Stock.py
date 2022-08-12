@@ -20,7 +20,7 @@ import time
 
 while True:
   now = datetime.now()
-  print("             \n", now.time())
+  print("             ", now.time(),"\n")
   # 삼성전자 005930
   get_price("삼성전자", "005930")
 
