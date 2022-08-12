@@ -8,26 +8,26 @@ def get_bs_obj(com_code):
     bs_obj = BeautifulSoup(result.content, "html.parser") #html.parser 로 파이썬에서 쓸 수 있는 형태로 변환
     return bs_obj
 
-def get_price(com_code):
+def get_price(com_name, com_code):
   bs_obj = get_bs_obj(com_code)
   no_today = bs_obj.find("p", {"class":"no_today"})
   blind_now = no_today.find("span", {"class":"blind"})
+  print("{0} 현재가\n {1}\n".format(com_name, blind_now.text))
   return blind_now.text
 
 from datetime import datetime
 import time
 
 while True:
-  삼성전자 = get_price("005930")
-  LG전자 = get_price("066570")
-
   now = datetime.now()
   print("             ", now.time())
   # 삼성전자 005930
-  print("\n삼성전자 현재가")
-  print(삼성전자)
+  get_price("삼성전자", "005930")
 
   # LG전자 066570
-  print("\nLG전자 현재가")
-  print(LG전자)
+  get_price("LG전자", "066570")
+
+  # 카카오 035720
+  get_price("카카오", "035720")
+  
   print("\n============================================")
