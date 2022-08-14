@@ -53,16 +53,24 @@ treeview.column("#4", width=100, anchor="center")
 treeview.heading("four", text="평가손익", anchor="center")
 
 삼성n = int(input("삼성전자 보유 수량을 입력하세요."))
+삼성p = int(input("삼성전자 평균 단가를 입력하세요."))
 LGn = int(input("LG전자 보유 수량을 입력하세요."))
+LGp = int(input("LG전자 평균 단가를 입력하세요."))
+카카오n = int(input("카카오 보유 수량을 입력하세요."))
+카카오p = int(input("카카오 평균 단가를 입력하세요."))
 
 while True:
   time.sleep(1)
   삼성전자 = int(get_price("005930").replace(",",""))
   LG전자 = int(get_price("066570").replace(",",""))
+  카카오 = int(get_price("035720").replace(",",""))
   now = datetime.now()
   
+  삼p = ((삼성전자*삼성n) - (삼성n*삼성p))
+  카p = ((카카오*카카오n) - (카카오n*카카오p))
+
   # 표에 삽입될 데이터
-  treelist=[("삼성전자", 삼성n, 삼성전자, ((삼성전자*7) - 412800)), ("LG전자", LGn, LG전자, ((LG전자*6) - 560600))]
+  treelist=[("삼성전자", 삼성n, 삼성전자, 삼p), ("LG전자", LGn, LG전자, "X"), ("카카오", 카카오n, 카카오, 카p), ("==================", "==================", "==================", "=================="), ("Total", 삼성n + 카카오n, "==================", 삼p + 카p)]
   
   # 표에 데이터 삽입
   for i in range(len(treelist)):
