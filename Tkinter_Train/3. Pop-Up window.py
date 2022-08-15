@@ -7,8 +7,8 @@ root.resizable(0,0)
 
 def your_name():
 	yn = txt.get() #텍스트 입력란에서 값을 가져와서 변수 yn에 저장한다.
-	lbl2.configure(text="your name: "+yn) #함수가 실행시 라벨2를 yn의 변경 값으로 설정
-	messagebox.showinfo("name",yn) #메시지 박스를 띄운다.
+	lbl2.configure(text="your name: "+yn) #함수가 실행시 라벨2를 yn의 변경 값으로 설정, 사용자의 조작에 따라 라벨과 텍스트의 변경이 필요할 때 지정해서 바꾸거나 입력을 받아서 바꾸 경우에 사용
+	messagebox.showinfo("name",yn) #메시지 박스를 띄운다., (팝업 창의 캡션 부분, 실질적으로 나타나는 메시지)
 
 lbl = Label(root, text="name", font="NanumGothic 10")
 lbl.grid(row=0, column=0)
