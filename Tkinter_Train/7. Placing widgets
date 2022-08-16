@@ -1,0 +1,19 @@
+from tkinter import *
+root = Tk()
+root.title("blog")
+root.geometry("200x100")
+root.resizable(0,0)
+
+lbl = Label(root, text="test", font="NanumGothic 15")
+lbl.pack()
+
+txt = Entry(root)
+txt.pack()
+
+x,y=2,1
+btn = Button(root, text=str(x)+"x"+str(y),width=x,height=y)
+btn.pack()
+btn2 = Button(root, text=str(x)+"x"+str(y),width=x,height=y)
+btn2.pack()
+
+root.mainloop()
