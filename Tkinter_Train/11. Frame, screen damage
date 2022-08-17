@@ -1,0 +1,28 @@
+https://m.blog.naver.com/PostView.naver?blogId=dsz08082&logNo=222161918101&targetKeyword=&targetRecommendationCode=1
+
+from tkinter import *
+
+root = Tk()
+root.title("Neltia")
+root.geometry("400x400")
+root.resizable(False, False)
+
+frame1 = Frame(root)
+frame1.pack(side="top", fill="both", expand=True)
+
+frame2 = Frame(root)
+frame2.pack(side="bottom", fill="both", expand=True)
+
+button1 = Button(frame1, text="프레임1: ^")
+button1.pack()
+
+lbl = Label(frame1, text="플레이어")
+lbl.pack(side="bottom")
+
+button2 = Button(frame2, text="프레임2: <")
+button2.pack(side="left")
+
+button2 = Button(frame2, text="프레임2: >")
+button2.pack(side="right")
+
+root.mainloop()
